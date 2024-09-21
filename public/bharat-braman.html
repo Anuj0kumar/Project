@@ -1,0 +1,297 @@
+<html lang="en"></html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Bharat Braman
+  </title>
+  <style>
+   body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+             background: linear-gradient(to top, #475b62, #6cb6c8);
+
+            color: #fff;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            border-bottom: 1px solid #444;
+        }
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar .menu a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+        }
+        .navbar .icons {
+            display: flex;
+            gap: 10px;
+        }
+        .navbar .icons i {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 400px;
+            background: url('bharat-main-pic.png') no-repeat center center/cover;
+            text-align: center;
+        }
+
+        
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .hero .cta-button {
+            padding: 10px 20px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #e74c3c;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        .section {
+            padding: 40px 20px;
+        }
+        .section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .featured-games, .latest-news {
+            display: flex;
+            gap: 20px;
+        }
+        .game, .news-item {
+            width: 30%;
+            background-color: #afacac;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .game img, .news-item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .game h3, .news-item h3 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .game p, .news-item p {
+            font-size: 16px;
+        }
+        .dropdown-menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: #333;
+            border: 1px solid #444;
+            border-radius: 8px;
+            padding: 10px;
+        }
+        .dropdown-menu a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            border-bottom: 1px solid #444;
+        }
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+        .description {
+            padding: 40px 20px;
+            background-color: #2a2a2a;
+            text-align: center;
+        }
+        .description p {
+            font-size: 18px;
+            margin: 0;
+        }
+        .footer {
+            padding: 20px;
+            background-color: #333;
+            text-align: center;
+            border-top: 1px solid #444;
+        }
+        .footer p {
+            margin: 0;
+            font-size: 16px;
+        }
+        .footer .social-icons {
+            margin-top: 10px;
+        }
+        .footer .social-icons i {
+            font-size: 24px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="navbar">
+   <div onclick="window.location.href='bharat-braman.html';" class="logo">
+    Bharat Braman
+   </div>
+   <div class="menu">
+    <a href="index.html">
+     Home
+    </a>
+    <a href="#">
+     News
+    </a>
+    <a href="#">
+     Contact
+    </a>
+   </div>
+   <div class="icons">
+    <i class="fas fa-user-circle">
+    </i>
+    <i class="fas fa-bars" onclick="toggleMenu()">
+    </i>
+   </div>
+  </div>
+  <div class="dropdown-menu" id="dropdownMenu">
+   <a href="index.html">
+    Home
+   </a>
+   <a href="#">
+    News
+   </a>
+   <a href="#">
+    Contact
+   </a>
+  </div>
+  <div class="hero">
+    <!-- <img src="bharat-main-pic.png" alt=""> -->
+   <h1>
+    Welcome to Bharat Braman
+   </h1>
+   <p>
+    Discover the latest heritage and culture
+   </p>
+   <button class="cta-button" onclick="window.location.href='bharat-braman.html';">
+    Get Started
+   </button>
+  </div>
+  <div class="section">
+   <h2>
+    Featured Places
+   </h2>
+   <div class="featured-games">
+    <div class="game">
+     <img alt="Featured Game 1" onclick="window.location.href='demo.html';" height="200" src="proto.png" width="300"/>
+     <h3>
+      ProtoType
+     </h3>
+     <p>
+        This is not real environment, only for Prototype
+     </p>
+    </div>
+    <div class="game">
+     <img alt="Featured Game 2" height="200" src="uttar-pradesh-braman.jpg" width="300"/>
+     <h3>
+      Uttar Praseh Braman
+     </h3>
+     <p>
+      Coming soon(explore culture, tradition and arts)
+     </p>
+    </div>
+    <div class="game">
+     <img alt="Featured Game 3" height="200" src="rajasthana.jpg" width="300"/>
+     <h3>
+      Rajasthana
+     </h3>
+     <p>
+        Coming soon(explore culture, tradition and arts)
+     </p>
+    </div>
+   </div>
+  </div>
+  <div class="section">
+   <h2>
+    Latest News
+   </h2>
+   <div class="latest-news">
+    <div class="news-item">
+     <img alt="News Item 1" height="200" src="proto.png" width="300"/>
+     <h3>
+      Proto-News
+     </h3>
+     <p>
+        Coming soon(explore culture, tradition and arts)
+     </p>
+    </div>
+    <div class="news-item">
+     <img alt="News Item 2" height="200" src="uttar-pradesh-braman.jpg" width="300"/>
+     <h3>
+      Uttar Pradesh 
+     </h3>
+     <p>
+        Coming soon(explore culture, tradition and arts)
+     </p>
+    </div>
+    <div class="news-item">
+     <img alt="News Item 3" height="200" src="rajasthana.jpg" width="300"/>
+     <h3>
+      Rajasthana
+     </h3>
+     <p>
+        Coming soon(explore culture, tradition and arts)
+     </p>
+    </div>
+   </div>
+  </div>
+  <div class="description">
+   <p>
+    Welcome to Game World, your ultimate destination for the latest games and news. Stay updated with our featured games and latest news sections. Join us and dive into the world of gaming!
+   </p>
+  </div>
+  <div class="footer">
+   <p>
+    © 2023 Game World. All rights reserved.
+   </p>
+   <div class="social-icons">
+    <i class="fab fa-facebook-f">
+    </i>
+    <i class="fab fa-twitter">
+    </i>
+    <i class="fab fa-instagram">
+    </i>
+    <i class="fab fa-linkedin-in">
+    </i>
+   </div>
+  </div>
+  <script>
+   function toggleMenu() {
+            var menu = document.getElementById('dropdownMenu');
+            if (menu.style.display === 'none' || menu.style.display === '') {
+                menu.style.display = 'flex';
+            } else {
+                menu.style.display = 'none';
+            }
+        }
+  </script>
+ </body>
+</html>

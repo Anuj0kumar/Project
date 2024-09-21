@@ -1,0 +1,271 @@
+<html></html>
+<head>
+    <title>UNESCO World Heritage Sites in India</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to right, #fc8466, #feb47b);
+            padding: 20px 20px; /* Increased padding to increase height */
+            border-bottom: 1px solid #ddd;
+            height: 100px;
+            z-index: 1;
+        }
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .navbar .logo img {
+            height: 45px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .navbar .menu a {
+            text-decoration: none;
+            color: #000000;
+            font-size: 18px;
+        }
+        .navbar .menu a:hover {
+            text-decoration: underline;
+        }
+        .navbar .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 20px;
+            top: 60px;
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+        }
+        .dropdown-menu a:hover {
+            background-color: #ddd;
+        }
+        .header {
+            text-align: center;
+            padding: 50px;
+            background-color: #e0e0e0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        .section {
+            padding: 20px;
+        }
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+        .content .site {
+            flex: 1 1 calc(30% -40px);
+            background-color: #fff;
+            padding: 20px 20px 0px 20px;
+            width: 400px;
+            height: 500px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content .site img {
+            width: 100%;
+            height: 70%;
+        }
+        .content .site h3 {
+            font-size: 24px;
+            margin: 5px 0;
+        }
+        .content .site p {
+            font-size: 16px;
+            color: #555;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img alt="Logo image" height="45" src="../logocopy.jpg" width="45">
+            Cultural Bird
+        </div>
+        <div class="menu">
+            <a href='#'>Home</a>
+            <a href="#">About</a>
+            <a href="#">Bharat-Darshan</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a onclick="window.location.href='./index.html';">Home</a>
+            <a href="#">About</a>
+            <a href="#">UNESCO SITES</a>
+            <a href="#">HANDICRAFT</a>
+            <a href="#">Bharat-Darshan</a>
+            <a href="#">Art</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </div>
+    <div class="header">
+        <h1>UNESCO World Heritage Sites in India</h1>
+        <p>Explore the rich cultural and natural heritage of India</p>
+    </div>
+    <div class="section">
+        <h2>Cultural Heritage</h2>
+        <div class="content">
+            <div class="site">
+                <img alt="Images" src="https://www.unciatrails.com/wp-content/uploads/2020/07/Taj2.jpg" >
+                <h3>Taj Mahal</h3>
+                <p>The Taj Mahal, located in Agra, is an ivory-white marble mausoleum built by Mughal Emperor Shah Jahan in memory of his beloved wife Mumtaz Mahal.</p>
+            </div>
+            <div class="site">
+                <img alt="Images" src="https://i.pinimg.com/originals/b1/4a/4c/b14a4c2edc4c2fe3790ce80df1d543f3.jpg" >
+                <h3>Ajanta Caves (Maharashtra)</h3>
+                <p>A group of 30 rock-cut Buddhist caves famous for their beautiful frescoes and sculptures.
+                    They date from the 2nd century BCE to about 480 CE and illustrate the evolution of Indian art.</p>
+            </div>
+            <div class="site">
+                <img alt="Images" src="https://lp-cms-production.imgix.net/2019-06/GettyImages-470586360_super.jpg?auto=format&fit=crop&ar=1:1&q=75&w=1200" >
+                <h3>Ellora Caves (Maharashtra)</h3>
+                <p> Comprising 34 caves, Ellora features Hindu, Buddhist, and Jain temples carved into rock.
+                    The Kailasa Temple is a remarkable example of rock-cut architecture and artistry.
+                </p>
+            </div>
+            <div class="site">
+                <img alt="Images" src="https://www.india-a2z.com/images/Red-fort1.jpg" >
+                <h3>Red Fort (Delhi)</h3>
+                <p>A fortification in Delhi built by Shah Jahan, known for its massive red sandstone walls. It served as the main residence of the Mughal emperors and is a symbol of India’s sovereignty.</p>
+            </div>
+            <div class="site">
+                <img alt="Image of Taj Mahal" src="https://images.lonelyplanetitalia.it/uploads/shutterstockrf-110806538?q=80&p=slider&s=95542fa36319bb5601a0582666f94aac" >
+                <h3>Hampi (Karnataka)</h3>
+                <p>The ruins of the Vijayanagara Empire, known for their impressive temples and palaces.A UNESCO site for its rich historical context and stunning landscape dotted with boulders and rice fields.</p>
+            </div>
+            <div class="site">
+                <img alt="Images" src="https://thetravelb.com/wp-content/uploads/2022/05/1-24.jpg" >
+                <h3>Khajuraho Temples (Madhya Pradesh)</h3>
+                <p>The Taj Mahal, located in Agra, is an ivory-white marble mausoleum built by Mughal Emperor Shah Jahan in memory of his beloved wife Mumtaz Mahal.</p>
+            </div>
+            <div class="site">
+                <img alt="Images" src="https://cdn.enjoytravel.com/img/travel-news/konark-sun-temple-depicts-a-chariot.jpg" >
+                <h3>Sun Temple, Konark (Odisha)</h3>
+                <p> A 13th-century temple dedicated to the sun god, Surya, designed as a gigantic chariot.
+                    Known for its exquisite stone carvings and architectural brilliance.</p>
+            </div>
+            <div class="site">
+                <img alt="Images" src="https://img.onmanorama.com/content/dam/mm/en/travel/outside-kerala/images/2021/8/2/mahabalipuram.jpg" >
+                <h3>Group of Monuments at Mahabalipuram (Tamil Nadu)</h3>
+                <p>Famous for its rock-cut temples and monolithic sculptures, including the Shore Temple.
+                   These monuments illustrate the art and architecture of the Pallava dynasty.</p>
+            </div>
+        
+            <div class="site">
+                <img alt="Images" src="https://img.indiahighlight.com/fit-in/1090x600/ih/uploads/1704264886.jpg" >
+                <h3>Jantar Mantar (Jaipur and Delhi)</h3>
+                <p> Astronomical observatories featuring a collection of architectural astronomical instruments.
+                    Built in the 18th century, they reflect the scientific advancements of that era.</p>
+            </div>
+            <div class="site">
+                <img alt="Images" src="http://1.bp.blogspot.com/-_A_hPMf6UXA/UPlIaFedKJI/AAAAAAAAALc/1ot1wZWv1Tg/s1600/Qutub+Minar.jpg" >
+                <h3>Qutub Minar (Delhi)</h3>
+                <p> A towering minaret made of red sandstone and marble, standing at 73 meters.
+                    Built in the 12th century, it is a prime example of Indo-Islamic architecture.</p>
+            </div>
+            
+            
+            
+        </div>
+    </div>
+    <div class="section">
+        <h2>Natural Heritage</h2>
+        <div class="content">
+            <div class="site">
+                <img alt="Image of Kaziranga National Park" src="https://demo.nenow.in/wp-content/uploads/2020/12/kaziranga-national-park-1024x577.jpg" width="300" height="200">
+                <h3>Kaziranga National Park</h3>
+                <p>Kaziranga National Park, located in Assam, is a UNESCO World Heritage Site known for its population of the Indian one-horned rhinoceros and diverse wildlife.</p>
+            </div>
+            <div class="site">
+                <img alt="Image of Sundarbans National Park" src="https://beyonder.travel/wp-content/uploads/2020/06/Sundarban_river.jpg" width="300" height="200">
+                <h3>Sundarbans National Park</h3>
+                <p>Sundarbans National Park, located in West Bengal, is a UNESCO World Heritage Site and the largest tidal halophytic mangrove forest in the world.</p>
+            </div>
+            <div class="site">
+                <img alt="Image of Sundarbans National Park" src="https://www.coveringindia.com/resources/fullsize/attraction-1560346623.jpg" width="300" height="200">
+                <h3>Nanda Devi and Valley of Flowers National Parks (Uttarakhand)
+
+                </h3>
+                <p>Known for their stunning landscapes and diverse flora, particularly alpine flowers.
+                The area is sacred and holds significant cultural importance, as well as ecological value.</p>
+            </div>
+            
+        </div>
+    </div>
+    <div class="section">
+        <h2>Mixed Heritage (Cultural and Natural)</h2>
+        <div class="content">
+            <div class="site">
+                <img alt="Image of Khangchendzonga National Park" src="https://3.bp.blogspot.com/-J_DjQ5pmJuM/WSX7IvtAYJI/AAAAAAABA5c/kqu2A5F2-N03vGNYRs6gg3wqG-rqfUFIQCLcB/s1600/khangchendzonga-national-park-india.jpg" width="300" height="200">
+                <h3>Khangchendzonga National Park</h3>
+                <p>Khangchendzonga National Park, located in Sikkim, is a UNESCO World Heritage Site known for its unique biodiversity and cultural significance.</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>© 2023 UNESCO World Heritage Sites in India. All rights reserved.</p>
+    </div>
+
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('dropdownMenu');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        }
+
+    </script>
+</body>
+</html>

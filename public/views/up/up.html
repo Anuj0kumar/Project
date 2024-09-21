@@ -1,0 +1,629 @@
+<html></html>
+<head>
+    <title>Uttar Pradesh</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #dbf1f5, #d7e7eb);
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to right, #fc8466, #feb47b);
+            padding: 20px 20px; /* Increased padding to increase height */
+            border-bottom: 1px solid #ddd;
+            height: 100px;
+            z-index: 1;
+        }
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .navbar .logo img {
+            height: 45px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .navbar .menu a {
+            text-decoration: none;
+            color: #000000;
+            font-size: 18px;
+        }
+        .navbar .menu a:hover {
+            text-decoration: underline;
+        }
+        .navbar .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 20px;
+            top: 60px;
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+        }
+        .dropdown-menu a:hover {
+            background-color: #ddd;
+        }
+        .content {
+            /* display: flex; */
+            padding: 20px;
+        }
+        .main-content {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+        }
+        .about-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px; /* Decreased height */
+            padding: 10px; /* Decreased padding */
+            margin-bottom: 10px; /* Decreased margin */
+            margin-left: 2px; /* Decreased margin */
+            margin-right: 2px; /* Decreased margin */
+            width: 85%; /* Decreased width by 15% */
+            margin: 0 auto; /* Center the section */
+            position: relative;
+        }
+        .about-section .text {
+            flex: 1;
+            text-align: left; /* Left align the text */
+            display: flex;
+            align-items: center;
+            font-family: cursive;
+        }
+        .about-section .text h1 {
+            font-size: 36px; /* Increased font size */
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .about-section .text .list-icon {
+            margin-left: 5px;
+            cursor: pointer;
+            position: relative;
+            font-size: 20px;
+            color: #434242;
+        }
+        .about-section .text .list-icon:hover .state-list {
+            display: block;
+        }
+        .about-section .text .state-list {
+            display: none;
+            position: absolute;
+            top: 5px;
+            left: 0;
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+            list-style: none;
+            padding: 5px;
+            width: 200px;
+            max-height: 150px; /* Set max height for scrollbar */
+            overflow-y: auto; /* Enable vertical scrollbar */
+        }
+        .about-section .text .state-list li {
+            font-size: smaller;
+            padding: 5px 0;
+        }
+        .about-section .text .state-list li:hover {
+            background-color: #ddd;
+        }
+        .about-section .about {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #cbc9c8, #9e9d9c);
+            height: 100%;
+            width: 50%;
+            padding-left: 2px; /* Decreased padding */
+            padding-right: 2px; /* Decreased padding */
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+        .about-section h2 {
+            font-size: 18px; /* Decreased font size */
+            margin-bottom: 5px;
+            padding-left: 5px;
+        }
+        .about-section p {
+            font-size: 14px; /* Decreased font size */
+            line-height: 1.5;
+            overflow-y: scroll;
+            scrollbar-width: none;
+            height: 90%;
+            padding-left: 5px;
+        }
+        .photo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .slide-section {
+            height: 600px; /* Increased height */
+            width: 85%;
+            background-color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            position: relative;
+            border-radius: 10px;
+        }
+        .slide-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: fit;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            border-radius: 10px;
+        }
+        .slide-section img.active {
+            opacity: 1;
+        }
+         .side-side{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+        .container {
+            width: 80%;
+            max-width: 1000px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+        }
+        .section p {
+            margin: 5px 0;
+            height: 10px;
+            background-color: #ddd;
+            padding: 5px;
+        }
+        .heritage-headline, .arts-section, .new-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .heritage-headline .text, .arts-section .text, .new-section .text {
+            width: 45%;
+        }
+        .heritage-headline .image, .arts-section .image, .new-section .image {
+            width: 45%;
+            height: 220px;
+            background-color: #ddd;
+            position: relative;
+            border-radius: 10px;
+        }
+        .heritage-headline .image img, .arts-section .image img, .new-section .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+        }
+        .heritage-title, .arts-title, .new-title {
+            text-align: center;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .arts-section {
+            flex-direction: row;
+        }
+        .title-section, .footer {
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            background-color: #f0f0f0;
+        }
+        .page-3{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 10px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .gallery div {
+            width: 200px; /* Increased size */
+            height: 220px; /* Increased size to accommodate text */
+            /* border: 1px solid #000; */
+            border-radius: 5px;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            object-fit: cover;
+        }
+        .gallery img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 5px;
+
+        }
+        .gallery p {
+            margin: 5px 0 0 0;
+            text-align: center;
+            height: 30px; /* Added height to accommodate text */
+            line-height: 30px; /* Center text vertically */
+        }
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            margin: 20px 0;
+        }
+        .links div {
+            width: 45%; /* Adjust width to fit two items per line */
+            text-align: center;
+            margin: 10px 0;
+        }
+        .food-part h1 {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .gallery-header {
+            width: 80%;
+            text-align: center;
+        }
+        .links div{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 25px;
+            background-color: #fc8466;
+            width: 40%;
+            margin: 10px;
+        }
+        .footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .footer-icons {
+            margin-top: 10px;
+        }
+        .footer-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img alt="Logo image" height="45" src="../logocopy.jpg" width="45">
+            Cultural Bird
+        </div>
+        <div class="menu">
+            <a href='#'>Home</a>
+            <a href="#">About</a>
+            <a href="#">Bharat-Darshan</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a onclick="window.location.href='./index.html';">Home</a>
+            <a href="#">About</a>
+            <a href="#">UNESCO SITES</a>
+            <a href="#">HANDICRAFT</a>
+            <a href="#">Bharat-Darshan</a>
+            <a href="#">Art</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="main-content">
+            <div class="about-section">
+                <div class="text">
+                    <h1>UTTAR PRADESH</h1>
+                        <span class="list-icon">
+                            <i class="fa-solid fa-caret-down"></i>
+                            <ul class="state-list">
+                                <li onclick="window.location.href='../andra-pradesh/andra.html';">Andra Pradesh</li>
+                                <li onclick="window.location.href='../bihar/bihar.html';">Bihar</li>
+                                <li onclick="window.location.href='../delhi/delhi.html';">Delhi</li>
+                                <li onclick="window.location.href='../eastern-india/easternindia.html';">Eastern India</li>
+                                <li onclick="window.location.href='../goa/goa.html';">Goa</li>
+                                <li onclick="window.location.href='../gujrat/gujrat.html';">Gujarat</li>
+                                <li onclick="window.location.href='../himalayan-north/himalayan.html';">Himalayan North</li>
+                                <li onclick="window.location.href='../karnataka/karnataka.html';">Karnataka</li>
+                                <li onclick="window.location.href='../kerla/kerla.html';">Kerla</li>
+                                <li onclick="window.location.href='../mp/mp.html';">Madhya Pradesh</li>
+                                <li onclick="window.location.href='../maharastra/maharastra.html';">Maharashtra</li>
+                                <li onclick="window.location.href='../north-eastern-india/northindia.html';">North Eastern India</li>
+                                <li>Punjab & Haryana</li>
+                                <li>Rajasthana</li>
+                                <li>Uttar Pradesh</li>
+                            </ul>
+                        </span>
+                </div>
+                <div class="about">
+                    <h2>About-</h2>
+                    <p>Uttar Pradesh, often referred to as UP, is a state in northern India. It is the most populous state in India and the fourth-largest Indian state by area. The state is known for its rich cultural heritage, historical significance, and vibrant traditions. Uttar Pradesh is home to several important cities, including the capital city Lucknow, and the historical city of Agra, which houses the iconic Taj Mahal.</p>
+                </div>
+            </div>
+            <div class="photo">
+                <div class="slide-section">
+                    <img alt="Image 1" class="active" height="500" src="image\sylwia-bartyzel-eU4pipU_8HA-unsplash.jpg" width="800">
+                    <img alt="Image 2" height="500" src="./image\baruasagar.png" width="800">
+                    <img alt="Image 3" height="500" src="image\chaat.webp" width="800">
+                    <img alt="Image 4" height="500" src="image\ramnagar fort.avif" width="800">
+                    <img alt="Image 5" height="500" src="image\perfume.jpg" width="800">
+                </div>
+            </div>
+            <div class="side-side">
+                <div class="container">
+                    <div class="heritage-title">
+                     <h2 style="margin-top: 0;">
+                      Heritage
+                     </h2>
+                    </div>
+                    <div class="section heritage-headline">
+                     <div class="text">
+                      <p>
+                       Text line 1
+                      </p>
+                      <p>
+                       Text line 2
+                      </p>
+                      <p>
+                       Text line 3
+                      </p>
+                      <p>
+                       Text line 4
+                      </p>
+                      <p>
+                       Text line 5
+                      </p>
+                     </div>
+                     <div class="image">
+                      <img alt="Placeholder image 1" height="200" src="tajagra.jpg" width="400"/>
+                     </div>
+                    </div>
+                    <div class="arts-title">
+                     <h2 style="margin-top: 0;">
+                      Arts
+                     </h2>
+                    </div>
+                    <div class="section arts-section">
+                     <div class="image">
+                      <img alt="Placeholder image 2" height="200" src="banarasi-Saree.jpeg"  width="400"/>
+                     </div>
+                     <div class="text">
+                      <p>
+                       Text line 6
+                      </p>
+                      <p>
+                       Text line 7
+                      </p>
+                      <p>
+                       Text line 8
+                      </p>
+                      <p>
+                       Text line 9
+                      </p>
+                      <p>
+                       Text line 10
+                      </p>
+                     </div>
+                    </div>
+                    <div class="new-title">
+                     <h2 style="margin-top: 0;">
+                      Dance
+                     </h2>
+                    </div>
+                    <div class="section new-section">
+                     <div class="text">
+                      <p>
+                       Text line 11
+                      </p>
+                      <p>
+                       Text line 12
+                      </p>
+                      <p>
+                       Text line 13
+                      </p>
+                      <p>
+                       Text line 14
+                      </p>
+                      <p>
+                       Text line 15
+                      </p>
+                     </div>
+                     <div class="image">
+                      <img alt="Placeholder image 3" height="200" src="kahak.jpg"  width="400"/>
+                     </div>
+                    </div>
+                   </div>
+            </div>
+        </div>
+        <div class="page-3">
+            <div class="food-part">
+                <h1>
+                 Foods
+                </h1>
+               </div>
+               <div class="gallery">
+                <div>
+                 <img alt="Placeholder image 1" src="aalo kachori.webp"/>
+                 <p>Aalo Kachori</p>
+                </div>
+                <div>
+                 <img alt="Placeholder image 2" src="balushahi.jpg"/>
+                 <p>Balushahi</p>
+                </div>
+                <div>
+                 <img alt="Placeholder image 3" src="banarasi pan.jpg"/>
+                 <p>Banarasi Pan</p>
+                </div>
+                <div>
+                 <img alt="Placeholder image 4" src="boti kabab.jpg"/>
+                 <p>Boti Kabab</p>
+                </div>
+               </div>
+               <div class="gallery">
+                <div>
+                 <img alt="Placeholder image 5" src="bread.jpg"/>
+                 <p>Bread</p>
+                </div>
+                <div>
+                 <img alt="Placeholder image 6" src="chole bhature.jpg"/>
+                 <p>Chole Bhature</p>
+                </div>
+                <div>
+                 <img alt="Placeholder image 7" src="lucknow biryani.jpg"/>
+                 <p>Lucknow Biryani</p>
+                </div>
+                <div>
+                 <img alt="Placeholder image 8" src="mathura kachori.jpg"/>
+                 <p>Mathura Kachori</p>
+                </div>
+               </div>
+               <div class="gallery-header">
+                <h2>
+                 Our Gallery
+                </h2>
+               </div>
+               <div class="links">
+                <div>
+                 Podcast
+                </div>
+                <div>
+                 Books
+                </div>
+                <div>
+                 Festival Calendar
+                </div>
+                <div>
+                 Workshops
+                </div>
+               </div>
+               <div class="footer">
+                <p>Government Line</p>
+                <div class="footer-icons">
+                 <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                 <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                 <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                 <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+               </div>
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('dropdownMenu');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        }
+
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.slide-section img');
+        const totalImages = images.length;
+
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % totalImages;
+            images[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextImage, 4000);
+        const heritageImages = [
+            'tajagra.jpg',
+            'jhansifort.jpg',
+            'sarnath2.jpg',
+            'fathehpursikri.jpg',
+            'unchagaon-fort.jpg'
+        ];
+        const artsImages = [
+            'banarasi-Saree.jpeg',
+            'metalcraft.jpg',
+            'pottery.webp',
+            'woodwork.jpg',
+            'Sculpture.jpg'
+        ];
+        const handiCraftImages = [
+            'kahak.jpg',
+            'https://i.ytimg.com/vi/qwj0NuTcy2o/maxresdefault.jpg',
+            'https://images.bhaskarassets.com/web2images/521/2021/01/28/dsc2617_1611833904.jpg',
+            'https://th-i.thgim.com/public/incoming/527s61/article65282809.ece/alternates/FREE_1200/01hyngg_National%20Cultural%20Festival%20of%20India%2001.jpg',
+            'https://i0.wp.com/www.nepallivetoday.com/wp-content/uploads/2021/08/202108141350-791f3b5e-4da7-4496-ba21-e4bd15e10876_medium.jpg?fit=1800%2C1013&ssl=1'
+        ];
+
+        let currentHeritageImageIndex = 0;
+        let currentArtsImageIndex = 0;
+        let currentHandiCraftImageIndex = 0;
+
+        const heritageImageElement = document.querySelector('.heritage-headline .image img');
+        const artsImageElement = document.querySelector('.arts-section .image img');
+        const handiCraftImageElement = document.querySelector('.new-section .image img');
+
+        setInterval(() => {
+            currentHeritageImageIndex = (currentHeritageImageIndex + 1) % heritageImages.length;
+            heritageImageElement.src = heritageImages[currentHeritageImageIndex];
+        }, 4000); // 4 seconds interval
+
+        setInterval(() => {
+            currentArtsImageIndex = (currentArtsImageIndex + 1) % artsImages.length;
+            artsImageElement.src = artsImages[currentArtsImageIndex];
+        }, 4000); // 4 seconds interval
+
+        setInterval(() => {
+            currentHandiCraftImageIndex = (currentHandiCraftImageIndex + 1) % handiCraftImages.length;
+            handiCraftImageElement.src = handiCraftImages[currentHandiCraftImageIndex];
+        }, 4000); // 4 seconds interval
+    </script>
+</body>
+</html>
